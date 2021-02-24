@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-info justify-content-between">
         <a class="navbar-brand text-warning pl-5" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler text-lg" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -25,7 +25,87 @@
        
       </nav>
       <h2 class="py-5 text-center font-weight-bolder h1 mt-2 text-info">ORINOCO</h2>
-      <footer class="container-fluid bg-dark p-3">
+
+      <main class="container">
+         <h2 class="text-info mt-2">Your basket</h2>
+        <table class="table table-striped mb-5">
+            <thead>
+              <tr>
+                <th scope="col">Product name</th>
+                <th scope="col-6">Lense</th>
+                <th scope="col">Price</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">...</th>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+              <tr>
+                <th scope="row">...</th>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+              <tr>
+                <th scope="row">...</th>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+              </tr>
+            </tbody>
+          </table>
+        </main>
+
+          <section class="container">
+              <div class="mt-5">
+                  <hr>
+              </div>
+              <h2 class="text-info mt-1">Your details</h2>
+      <form class="mb-5">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address 2</label>
+          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          
+          <div class="form-group col-md-2">
+            <label for="inputZip">Postcode</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        </div>
+        <div class="form-group">
+          
+        </div>
+        <button type="submit" class="btn btn-info text-warning btn-lg">Order</button>
+      </form>
+    </section>
+
+    
+
+
+      <footer class="container-fluid bg-dark p-3 mt-5">
         <div class="row text-white">
           <div class="col-4">
             <h5>About</h5>
@@ -42,6 +122,7 @@
         </div>
         </div>
                 
+        
 </footer>
 
 
