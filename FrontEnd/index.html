@@ -9,22 +9,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
-    <header class="container-fluid">
-        <div class="row bg-info">
-            <div class="row align-items-center col-6 text-warning pl-5 display-6">
-            <h1>Orinoco</h1>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-info justify-content-between">
+        <div class="h4 pt-3 pl-5 text-warning">
+          <p>Orinoco</p>
         </div>
-        <div class="row align-items-center col-6 d-flex justify-content-end text-warning">
-            <h3>Basket</h3>
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart4 pl-1" viewBox="0 0 16 16">
-                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-              </svg>
-        </div>
-        </div>
+        
+        <a class="navbar-brand text-warning pr-5 h1" href="#">Basket <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-cart4 pl-1" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+          </svg></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+      </nav>
         <div class="container-fluid">
-            <h2 class="py-3 text-center font-weight-bolder h1 mt-5 text-info">ORINOCO</h2>
+            <h1 class="py-3 text-center font-weight-bolder mt-5 text-info">ORINOCO</h1>
             <h3 class="pb-2 pl-4 text-info">Why shop with us</h3>
-            <p class="text-center text-center pb-3 text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum veritatis, optio tempore adipisci fugiat commodi quos sed laboriosam debitis cupiditate error numquam, aut natus harum excepturi, exercitationem esse assumenda illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem quisquam doloremque voluptatibus, ea corrupti sit repellat atque! Amet totam architecto hic rem, a natus explicabo animi, voluptates minima dignissimos maxime.
+            <p class="text-justify pb-3 mx-3 text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum veritatis, optio tempore adipisci fugiat commodi quos sed laboriosam debitis cupiditate error numquam, aut natus harum excepturi, exercitationem esse assumenda illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem quisquam doloremque voluptatibus, ea corrupti sit repellat atque! Amet totam architecto hic rem, a natus explicabo animi, voluptates minima dignissimos maxime.
             Odio sunt tenetur aliquam porro vitae architecto error earum eos obcaecati cumque. Eligendi mollitia eaque blanditiis dolorem consequatur saepe esse doloremque tempore cumque debitis, sunt veritatis odio dicta, exercitationem architecto.
             Sit, reiciendis! Rerum blanditiis adipisci nisi aut, fugiat minima quidem quasi sapiente hic at eius impedit totam inventore explicabo ducimus amet tenetur. Voluptates beatae neque facere odit asperiores hic! Totam.</p>
         </div>
@@ -34,13 +36,13 @@
         <h2 class="p-3 bg-info text-warning text-center container rounded">Cameras</h2>
 
         <div class="container-fluid">
-            <div class="row justify-content-around">
+            <div class="row justify-content-around" id="camera-cards">
 
         <div class="card border-info my-3 shadow" style="width: 32rem;">
             <img class="card-img-top" src="../JWDP5/images/vcam_1.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Retro D-4500 Mark-X</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
+              <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
               <h5 class="pt-2 text-right">$799</h5>
               <a href="#" class="btn btn-info text-warning btn-lg">Details</a>
             </div>
@@ -50,7 +52,7 @@
             <img class="card-img-top" src="../JWDP5/images/vcam_2.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">High-tech C-400 Super-X</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
+              <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
               <h5 class="pt-2 text-right">$2399</h5>
               <a href="#" class="btn btn-info text-warning btn-lg">Details</a>
             </div>
@@ -60,7 +62,7 @@
             <img class="card-img-top" src="../JWDP5/images/vcam_3.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Super-Retro B-300 Coast-X</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
+              <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
               <h5 class="pt-2 text-right">$1199</h5>
               <a href="#" class="btn btn-info text-warning btn-lg">Details</a>
             </div>
@@ -70,7 +72,7 @@
             <img class="card-img-top" src="../JWDP5/images/vcam_4.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Original A-221 Mirror-YS</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
+              <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
               <h5 class="pt-2 text-right">$999</h5>
               <a href="#" class="btn btn-info text-warning btn-lg">Details</a>
             </div>
@@ -80,7 +82,7 @@
             <img class="card-img-top" src="../JWDP5/images/vcam_5.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title">Alpha-Compact J-8500 Ultra-X</h5>
-              <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
+              <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
               <h5 class="pt-2 text-right">$1299</h5>
               <a href="#" class="btn btn-info text-warning btn-lg">Details</a>
             </div>
@@ -114,5 +116,6 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
 </body>
 </html>
