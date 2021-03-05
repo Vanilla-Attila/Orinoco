@@ -18,7 +18,12 @@
   */
 
   // ajax   or xmlhttprequest or fetch
- fetch('http://localhost:3000/api/cameras')
+
+ 
+  
+
+
+  fetch('http://localhost:3000/api/cameras')
  .then(response => response.json())
  .then(data => {
     // data is array you can loop over it to get values 
@@ -31,13 +36,24 @@ parent.innerHTML = '';
         <div class="card border-info my-3 shadow" style="width: 32rem;">
             <img class="card-img-top" src="${element.imageUrl}" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">Retro D-4500 Mark-X</h5>
-              <p class="card-text text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempore cumque voluptatibus nisi quo qui quae repellat quaerat. Est esse, tempora non recusandae laudantium tenetur molestias excepturi sunt ipsa velit.</p>
-              <h5 class="pt-2 text-right">$799</h5>
-              <a href="#" class="btn btn-info text-warning btn-lg">Details</a>
+              <h5 class="card-title">${element.name}</h5>
+              <p class="card-text text-justify">${element.description}</p>
+              <h5 class="pt-2 text-right">$ ${element.price}</h5>
+              <a href="#" class="btn btn-info text-warning btn-lg" onclick="GetProduct('${element._id}')">Details</a>
             </div>
           </div>`)
     });
 
  })
  .catch(error => console.log(error))
+
+
+ function GetProduct(id){
+localStorage.setItem('ProdID',id)
+window.location.href = "single-product-page.html"
+
+ }
+
+
+
+
