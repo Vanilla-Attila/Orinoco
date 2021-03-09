@@ -1,0 +1,46 @@
+/* 
+ Warning #f0ad4e
+ Info #5bc0de
+ Danger #d9534f
+ Success #5cb85c
+ Primary #0275d8
+ Faded #f7f7f7
+*/
+
+
+.cart-index {
+    display: inline-block;
+    position: relative;
+    top: -10px;
+    left: -16px;
+    padding: 0 5px;
+    background: #d9534f;
+    border-radius: 30%;
+}
+
+.dropdown {
+    position: relative;
+    bottom: 37px;
+}
+
+.total {
+    display: inline-block;
+    /* border: 1px solid #5bc0de;
+    background: #5bc0de;
+    border-radius: 5px;
+    padding: 8px;
+    color: #fff; */
+}
+
+.prod-st {
+    width: 30%;
+}
+
+.input-st {
+    width: 20%;
+}
+
+.cart-button {
+    width: 300px;
+    margin: 40px 0;
+}

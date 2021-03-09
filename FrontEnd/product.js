@@ -13,21 +13,21 @@ document.addEventListener('load',getProduct())
         
       product.insertAdjacentHTML('beforeend', `
         <div class="card border-info my-3 container" style="width: 42rem;">
-      <img class="card-img-top" src="${data.imageUrl}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">${data.name}</h5>
-        <p class="card-text text-justify">${data.description}</p>
-        <h5 class="pt-2 text-right">$ ${data.price}</h5>
+          <img class="card-img-top" src="${data.imageUrl}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">${data.name}</h5>
+          <p class="card-text text-justify">${data.description}</p>
+          <h5 class="pt-2 text-right">$ ${data.price}</h5>
         <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <button class="btn btn-info text-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            Select Lense
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-           
-          
+          </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">         
         </div>
         </div>
-        <a href="#" class="btn btn-info text-warning btn-lg" onclick = "addProduct()">Add to Cart</a>
+        <div class="d-flex justify-content-center">
+          <a href="#" class="btn btn-info text-warning btn-lg" onclick = "addProduct()">Add to Cart</a>
+        </div>
       </div>
     </div>`
     )

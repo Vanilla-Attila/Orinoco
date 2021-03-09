@@ -29,9 +29,9 @@
     // data is array you can loop over it to get values 
     //select the parent to inject 
     let parent = document.getElementById('camera-cards')
-parent.innerHTML = '';
+    parent.innerHTML = '';
     data.forEach(element => {
-
+       
          parent.insertAdjacentHTML('beforeend', `
         <div class="card border-info my-3 shadow" style="width: 32rem;">
             <img class="card-img-top" src="${element.imageUrl}" alt="Card image cap">
@@ -48,7 +48,7 @@ parent.innerHTML = '';
  .catch(error => console.log(error))
 
 
- function GetProduct(id){
+function GetProduct(id){
 localStorage.setItem('ProdID',id)
 window.location.href = "single-product-page.html"
 
