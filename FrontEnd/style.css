@@ -44,3 +44,7 @@
     width: 300px;
     margin: 40px 0;
 }
+
+.cart-pic {
+    image-rendering: pixelated;
+}

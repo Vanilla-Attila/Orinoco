@@ -25,18 +25,32 @@ document.addEventListener('load',getProduct())
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">         
         </div>
         </div>
+        
+                    
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Select Lenses</label>
+                </div>
+                  <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Lenses</option>
+                    <option value="1">one</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+
+
         <div class="d-flex justify-content-center">
-          <a href="#" class="btn btn-info text-warning btn-lg" onclick = "addProduct()">Add to Cart</a>
+          <a href="./cart-page.html" class="btn btn-info text-warning btn-lg" onclick = "addProduct()">Add to Cart</a>
         </div>
       </div>
     </div>`
     )
-    let drop = document.getElementsByClassName('dropdown-menu')[0]
+    let drop = document.getElementById('inputGroupSelect01')[0]
      lense.forEach(element => {
-      drop.insertAdjacentHTML( 'beforeend' , '<a class="dropdown-item" href="#">'+ element + '</a>')
+      drop.insertAdjacentHTML( 'beforeend' , `<option class="dropdown-item" href="#">${element}</option>`)
             
         })
-    ;
 
     // data is array you can loop over it to get values 
     //select the parent to inject 
@@ -51,6 +65,6 @@ document.addEventListener('load',getProduct())
     if(localStorage.getItem('products')){
         products = JSON.parse(localStorage.getItem('products'));
     }
-    products.push(prduct);
+    products.push(product);
     localStorage.setItem('products', JSON.stringify(products));
 }
