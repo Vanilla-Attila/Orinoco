@@ -9,6 +9,7 @@ document.addEventListener('load',getProduct())
  .then(data => {
      let product = document.getElementById('product')
      let lense = data.lenses
+     let prod = data 
      product.innerHTML = '';
         
       product.insertAdjacentHTML('beforeend', `
@@ -18,13 +19,7 @@ document.addEventListener('load',getProduct())
           <h5 class="card-title">${data.name}</h5>
           <p class="card-text text-justify">${data.description}</p>
           <h5 class="pt-2 text-right">$ ${data.price}</h5>
-        <div class="dropdown">
-           <button class="btn btn-info text-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           Select Lense
-          </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">         
-        </div>
-        </div>
+        
         
                     
                 <div class="input-group mb-3">
@@ -32,39 +27,38 @@ document.addEventListener('load',getProduct())
                   <label class="input-group-text" for="inputGroupSelect01">Select Lenses</label>
                 </div>
                   <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Lenses</option>
-                    <option value="1">one</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option selected>Choose</option>
                   </select>
                 </div>
 
 
         <div class="d-flex justify-content-center">
-          <a href="./cart-page.html" class="btn btn-info text-warning btn-lg" onclick = "addProduct()">Add to Cart</a>
+          <button id="add-to-cart" class="btn btn-info text-warning btn-lg" >Add to Cart</button>
         </div>
       </div>
     </div>`
     )
-    let drop = document.getElementById('inputGroupSelect01')[0]
+    let drop = document.getElementById('inputGroupSelect01')
      lense.forEach(element => {
-      drop.insertAdjacentHTML( 'beforeend' , `<option class="dropdown-item" href="#">${element}</option>`)
+      drop.insertAdjacentHTML( 'beforeend' , `<option value="${element}">${element}</option>`)
             
         })
 
     // data is array you can loop over it to get values 
     //select the parent to inject 
-  console.log(data)
+ 
+  document.getElementById('add-to-cart').addEventListener("click", ()=> addProduct(data))
 
  })
  .catch(error => console.log(error))
   }
 
-   function addProduct(){
+   function addProduct(product){
     let products = [];
     if(localStorage.getItem('products')){
         products = JSON.parse(localStorage.getItem('products'));
     }
     products.push(product);
-    localStorage.setItem('products', JSON.stringify(products));
+     localStorage.setItem('products', JSON.stringify(products));
+     window.location.href = "cart-page.html"
 }
