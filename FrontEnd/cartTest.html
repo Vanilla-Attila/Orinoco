@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Orinoco - Your cart</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-info justify-content-between pt-4">
+            <a class="navbar-brand text-warning pl-5 h1" href="#">Orinoco</a>
+            <button class="navbar-toggler text-lg" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <a class="navbar-brand text-warning pr-5 h1" href="#">Cart <svg xmlns="http://www.w3.org/2000/svg"
+                    width="32" height="32" fill="currentColor" class="bi bi-cart4 pl-1" viewBox="0 0 16 16">
+                    <path
+                        d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                </svg>
+                <div class="cart-index" id="cart-index">2</div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </nav>
+        <h2 class="py-5 text-center font-weight-bolder h1 mt-2 text-info">ORINOCO</h2>
+    </header>
+    <main class="container">
+        <h2 class="text-info mt-2">Your cart</h2>
+        <table class="table table-hover mb-5">
+            <thead>
+                <tr>
+                    <th class="text-left prod-st" scope="col">Product</th>
+                    <th class="text-center lenses-st" scope="col">Lense</th>
+                    <th class="text-center quant-st" scope="col">Quantity</th>
+                    <th class="text-center price-st" scope="col">Price</th>
+                    <th class="text-right remove-st" scope="col">Remove from cart</th>
+                </tr>
+            </thead>
+            <tbody id="my-cart">
+                <tr>
+                    <th class="text-center" scope="row"><img src="../JWDP5/images/vcam_1.jpg" width="40px" height="40px"
+                            class="mr-4 cart-pic" alt="A camera" id="cartItem">Camera 1</th>
+                    <td class="text-center">Lense 1</td>
+                    <td class="input-group justify-content-center">
+                        <button class="input-group-prepend btn btn-minus disabled btn-danger">-</button>
+                        <input class="input-group-text input-st" id="quantity" type="text" value="1">
+                        <button class="btn btn-plus btn-success">+</button>
+                    </td>
+                    <td class="text-center price" id="price">1000000</td>
+                    <td class="text-center"><button type="button" class="btn btn-danger">Remove</button></td>
+                </tr>
+                <tr>
+                    <th class="text-center" scope="row"><img src="../JWDP5/images/vcam_2.jpg" width="40px" height="40px"
+                            class="mr-4 cart-pic" alt="A camera">Camera 2</th>
+                    <td class="text-center">Lense 2</td>
+                    <td class="input-group justify-content-center">
+                        <button class="input-group-prepend btn btn-minus disabled btn-danger">-</button>
+                        <input class="input-group-text input-st quantity" type="text" value="1">
+                        <button class="btn btn-plus btn-success">+</button>
+                    </td>
+                    <td class="text-center price">200000</td>
+                    <td class="text-center"><button type="button" class="btn btn-danger">Remove</button></td>
+                </tr>
+                <tr>
+                    <th class="text-center" scope="row"><img src="../JWDP5/images/vcam_3.jpg" width="40px" height="40px"
+                            class="mr-4 cart-pic" alt="">Camera 3</th>
+                    <td class="text-center">Lense 3</td>
+                    <td class="input-group justify-content-center">
+                        <button class="input-group-prepend btn btn-minus disabled btn-danger">-</button>
+                        <input class="input-group-text input-st quantity" type="text" value="1">
+                        <button class="btn btn-plus btn-success">+</button>
+                    </td>
+                    <td class="text-center price">300000</td>
+                    <td class="text-center"><button type="button" class="btn btn-danger">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="text-right mr-5">
+            <h3 class="total">Total price:</h3>
+            <i class="fas fa-dollar-sign fa-lg pl-4"><span class="h3 font-weight-bold mr-3"
+                    id="total-price">10000</span></i>
+        </div>
+        <hr>
+    </main>
+    <section class="container">
+        <div class="mt-5">
+        </div>
+        <h2 class="text-info mt-1">Your details</h2>
+        <form class="mb-5" id="form">
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">First name</label>
+                    <input type="text" class="form-control shadow-none" id="firstName" placeholder="First name">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+                        class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+                        class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    <small>Not valid</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">Last name</label>
+                    <input type="text" class="form-control shadow-none" id="lastName" placeholder="Last name">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+                        class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+                        class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    <small>Not valid</small>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="text" class="form-control shadow-none" id="email" placeholder="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+                        class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+                        class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    <small>Not valid</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control shadow-none" id="password" placeholder="Password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+                        class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+                        class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    <small>Not valid</small>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" class="form-control shadow-none" id="address" placeholder="1234 Main St">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+                        class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+                        class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    <small>Not valid</small>
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control shadow-none" id="city">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+                        class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+                        class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    <small>Not valid</small>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputZip">ZIP code</label>
+                    <input type="text" class="form-control shadow-none" id="zip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+                        class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+                        class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                    </svg>
+                    <small>Not valid</small>
+                </div>
+            </div>
+            <div class="form-group">
+
+            </div>
+            <div class="text-center">
+                <button id="add-to-cart" type="submit" class="btn btn-info text-warning btn-lg p-2 cart-button">Proceed
+                    to
+                    checkout</button>
+            </div>
+        </form>
+    </section>
+
+
+
+
+    <footer class="container-fluid bg-dark p-3">
+        <h3 class="text-info text-center py-2">Orinoco</h3>
+        <div class="row text-white">
+            <div class="col-4">
+                <h5>About</h5>
+
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptates molestias, reprehenderit
+                    non
+                    assumenda laudantium fugit molestiae, excepturi ab recusandae quasi aspernatur, voluptatem sit? Enim
+                    corporis
+                    modi fugit voluptate totam!</p>
+            </div>
+            <div class="col-4">
+                <h5>Community</h5>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptates molestias, reprehenderit
+                    non
+                    assumenda laudantium fugit molestiae, excepturi ab recusandae quasi aspernatur, voluptatem sit? Enim
+                    corporis
+                    modi fugit voluptate totam!</p>
+            </div>
+            <div class="col-4">
+                <h5>Help</h5>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptates molestias, reprehenderit
+                    non
+                    assumenda laudantium fugit molestiae, excepturi ab recusandae quasi aspernatur, voluptatem sit? Enim
+                    corporis
+                    modi fugit voluptate totam!</p>
+            </div>
+        </div>
+        <p class="text-info text-center py-2">Developer: Attila Hack - 2021 - Openclassrooms</p>
+    </footer>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <script src="cartTest.js"></script>
+</body>
+
+</html>

@@ -42,14 +42,14 @@
     <table class="table table-hover mb-5">
       <thead>
         <tr>
-          <th class="text-center prod-st" scope="col">Product</th>
+          <th class="text-left prod-st" scope="col">Product</th>
           <th class="text-center lenses-st" scope="col">Lense</th>
           <th class="text-center quant-st" scope="col">Quantity</th>
           <th class="text-center price-st" scope="col">Price</th>
-          <th class="text-center remove-st" scope="col">Remove from cart</th>
+          <th class="text-right remove-st" scope="col">Remove from cart</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="my-cart">
         <tr>
           <th class="text-center" scope="row"><img src="../JWDP5/images/vcam_1.jpg" width="40px" height="40px"
               class="mr-4 cart-pic" alt="A camera" id="cartItem">Camera 1</th>
@@ -91,8 +91,7 @@
     <hr>
     <div class="text-right mr-5">
       <h3 class="total">Total price:</h3>
-      <i class="fas fa-dollar-sign fa-lg pl-4"><span class="h3 font-weight-bold ml-2 mr-3"
-          id="total-price">10000</span></i>
+      <i class="fas fa-dollar-sign fa-lg pl-4"><span class="h3 font-weight-bold mr-3" id="total-price">10000</span></i>
     </div>
     <hr>
   </main>
@@ -100,41 +99,128 @@
     <div class="mt-5">
     </div>
     <h2 class="text-info mt-1">Your details</h2>
-    <form class="mb-5">
+    <form class="mb-5" id="form">
       <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="inputAddress">First name</label>
+          <input type="text" class="form-control shadow-none" id="firstName" placeholder="First name">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+            class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+            class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+          <small>Not valid</small>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAddress">Last name</label>
+          <input type="text" class="form-control shadow-none" id="lastName" placeholder="Last name">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+            class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+            class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+          <small>Not valid</small>
+        </div>
+
+
         <div class="form-group col-md-6">
           <label for="inputEmail4">Email</label>
-          <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          <input type="text" class="form-control shadow-none" id="email" placeholder="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+            class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+            class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+          <small>Not valid</small>
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+          <input type="password" class="form-control shadow-none" id="password" placeholder="Password">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+            class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+            class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+          <small>Not valid</small>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="form-group">
-        <label for="inputAddress2">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputCity">City</label>
-          <input type="text" class="form-control" id="inputCity">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control shadow-none" id="address" placeholder="1234 Main St">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+            class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+            class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+          <small>Not valid</small>
         </div>
 
-        <div class="form-group col-md-2">
-          <label for="inputZip">Postcode</label>
-          <input type="text" class="form-control" id="inputZip">
+
+        <div class="form-group col-md-6">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control shadow-none" id="city">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+            class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+            class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+          <small>Not valid</small>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputZip">ZIP code</label>
+          <input type="text" class="form-control shadow-none" id="zip">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2ecc71"
+            class="bi bi-check-circle-fill valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#e74c3c"
+            class="bi bi-exclamation-circle-fill not-valid-icon" viewBox="0 0 16 16">
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+          </svg>
+          <small>Not valid</small>
         </div>
       </div>
       <div class="form-group">
 
       </div>
       <div class="text-center">
-        <button id="add-to-cart" type="submit" class="btn btn-info text-warning btn-lg p-2 cart-button">Submit</button>
+        <button id="add-to-cart" type="submit" class="btn btn-info text-warning btn-lg p-2 cart-button">Proceed to
+          checkout</button>
       </div>
     </form>
   </section>
