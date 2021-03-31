@@ -10,6 +10,7 @@ console.log(produtsArray)
 document.addEventListener('load',displayCart())
 function displayCart (){
     updateCartNumber()
+
     let parent = document.getElementById("my-cart")
     parent.innerHTML = '';
     produtsArray.forEach(element => {
@@ -28,7 +29,8 @@ function displayCart (){
              </tr>
             `)
     });
- 
+     calculateTotal()
+
 }
 
 
@@ -63,6 +65,19 @@ let price = document.querySelectorAll('.price').innerText
 //     document.getElementById(id + 'price').innerText = totalQuantity
 // }
 
+function calculateTotal(){
+
+    let total = 0 
+    const allPrice = [...document.getElementsByClassName('price')]
+    allPrice.forEach(item=>{
+        total += Number.parseInt( item.innerText)
+    })
+let totalDiv = document.getElementById('total-price')
+
+totalDiv.innerText = total
+
+}
+
 function plus(id){
 
 console.log(id)
@@ -74,6 +89,7 @@ console.log(id)
     let totalQuantity = price * quantityCount
 
 document.getElementById(id + 'price').innerText = totalQuantity
+calculateTotal()
 }
 
 function minus(id){
@@ -87,6 +103,7 @@ console.log(id)
     let totalQuantity = price * quantityCount
 
 document.getElementById(id + 'price').innerText = totalQuantity
+calculateTotal()
 }
 
 
@@ -138,11 +155,12 @@ return
       console.log('old array', produtsArray)
 
    produtsArray.splice(index,1)
-    localStorage.setItem('products', JSON.stringify(products));
+    localStorage.setItem('products', JSON.stringify(produtsArray));
     displayCart()
    console.log('new array', produtsArray)
   // the last line  
 updateCartNumber()
+calculateTotal()
 }
 
 // Form validations
@@ -151,10 +169,8 @@ const form = document.getElementById('form');
 const firstName = document.getElementById('firstName');
 const lastName = document.getElementById('lastName');
 const email = document.getElementById('email');
-const password = document.getElementById('password');
 const address = document.getElementById('address');
 const city = document.getElementById('city');
-const zip = document.getElementById('zip');
 
 
 
@@ -196,11 +212,6 @@ form.addEventListener('submit', function(e) {
     } else {
         showSuccess(email)
     }
-    if(password.value === '') {
-        showError(password, 'Password is required')
-    } else {
-        showSuccess(password)
-    }
     if(address.value === '') {
         showError(address, 'Address is required')
     } else {
@@ -211,10 +222,26 @@ form.addEventListener('submit', function(e) {
     } else {
         showSuccess(city)
     }
-    if(zip.value === '') {
-        showError(zip, 'ZIP code is required')
-    } else {
-        showSuccess(zip)
+    if (firstName.value === '' || lastName.value === '' || email.value === '' || city.value === '' || address.value === ''){
+
+        return
+    }else{
+    let pd = produtsArray.map(item => item._id )
+    let data = {
+        contact : {
+            firstName : firstName.value ,
+            lastName : lastName.value, 
+            email :email.value,
+            city : city.value ,
+            address : address.value
+        }, 
+        products: pd
     }
+             // send the opject using fetch method and post to the order and get the data then store it insode local storage and redirect to the confirmation page 
+             // inside confirmation page get the data from local storage then show the Order Id .
+             
+             // search for using fetch with Post  .
+    console.log(data)
+}
 }) 
 

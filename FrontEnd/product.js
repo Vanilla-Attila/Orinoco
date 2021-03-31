@@ -58,6 +58,7 @@ document.addEventListener('load',getProduct())
     if(localStorage.getItem('products')){
         products = JSON.parse(localStorage.getItem('products'));
     }
+    console.log(products)
     products.push(product);
      localStorage.setItem('products', JSON.stringify(products));
      window.location.href = "cart-page.html"
