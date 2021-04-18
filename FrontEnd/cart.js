@@ -1,76 +1,62 @@
 
-// Trying display items in cart
-//document.addEventListener('load', displayCart())
-
+// Getting product from local storage
 let products =  localStorage.getItem('products')
+
+// Converting json string to JS obj
 let produtsArray = JSON.parse(products)
-console.log(produtsArray)
+
 
 
 document.addEventListener('load',displayCart())
+
+// Displaying cart
 function displayCart (){
+
     updateCartNumber()
 
     let parent = document.getElementById("my-cart")
     parent.innerHTML = '';
     produtsArray.forEach(element => {
          parent.insertAdjacentHTML('beforeend', `
-            <tr>
+            <tr class="col-sm">
                 <th class="text-left" scope="row"><img src="${element.imageUrl}" width="40px" height="40px"
                 class="mr-4 cart-pic" alt="A camera" id="cartItem">${element.name}</th>
                 <td class="text-center">${element.lenses[0]}</td>
                 <td class="input-group justify-content-center">
-                    <button class="input-group-prepend btn btn-minus disabled btn-danger" onclick="minus('${element.name}')">-</button>
-                    <input class="input-group-text input-st quantity" id="${element.name}" type="text" value="1">
+                    <button class="input-group-prepend btn btn-minus btn-danger" onclick="minus('${element.name}')">-</button>
+                        <input class="input-group-text input-st quantity" id="${element.name}" type="text" value="1">
                     <button class="btn btn-plus btn-success" onclick="plus('${element.name}')">+</button>
                 </td>
                 <td class="text-center price" id="${element.name + 'price'}" data-price = "${element.price}">${element.price}</td>
-                <td class="text-right id="${element.name}"><button type="button" class="btn btn-danger" onclick="Remove('${element._id}')">Remove</button></td>
-             </tr>
+                <td class="text-right id="${element.name}"><button type="button" class="btn btn-danger" onclick="Remove('${element._id}')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg></button></td>
+            </tr>
             `)
     });
      calculateTotal()
 
 }
 
-
-// let obj = {
-//     contact : {
-//         firstName : document.getElementById('firstName').value ,
-//         lastName : document.getElementById('lastName').value,
-// },
-//     products : ['1','2']
-// }
-//  Trying change cart icon counter number
-
+// Updating cart number
 function updateCartNumber(){
-let cartIndex = document.getElementById('cart-index')
-cartIndex.innerText = produtsArray.length
-
+    let cartIndex = document.getElementById('cart-index')
+    cartIndex.innerText = produtsArray != null ? produtsArray.length : 0  // Ternary operator (if else in single line)
 }
 
-// Plus - minus quantity counter (it is partly working if there is no error before this)
-// document.querySelector('.btn-minus').setAttribute('disabled', 'disabled')
 
 let quantityCount
 
 let price = document.querySelectorAll('.price').innerText
 
-// function quantityPrice(id){
-//     quantityCount = document.getElementById(id).value
-//     if (quantityCount < 0){
-//         quantityCount = 0
-//     }
-//     let totalQuantity = price * quantityCount
-//     document.getElementById(id + 'price').innerText = totalQuantity
-// }
-
+// Calculating total price
 function calculateTotal(){
 
     let total = 0 
-    const allPrice = [...document.getElementsByClassName('price')]
+    const allPrice = [...document.getElementsByClassName('price')] // Rest parameters
     allPrice.forEach(item=>{
-        total += Number.parseInt( item.innerText)
+        total += Number.parseInt(item.innerText)                   // Parsing string to integer
     })
 let totalDiv = document.getElementById('total-price')
 
@@ -78,89 +64,63 @@ totalDiv.innerText = total
 
 }
 
-function plus(id){
 
-console.log(id)
-     quantityCount = document.getElementById(id).value
+// Plus button
+function plus(id){
+    quantityCount = document.getElementById(id).value
     quantityCount ++
     document.getElementById(id).value = quantityCount
     let price = document.getElementById(id +'price').dataset.price
-    console.log(price)
     let totalQuantity = price * quantityCount
 
 document.getElementById(id + 'price').innerText = totalQuantity
 calculateTotal()
 }
 
+let btnMinus = document.getElementsByClassName('btn-minus')
+
+// Minus button
 function minus(id){
 
 console.log(id)
-     quantityCount = document.getElementById(id).value
+    quantityCount = document.getElementById(id).value
+    if (quantityCount <= 0) {
+        btnMinus.disabled = true 
+        return
+    } else {
+        btnMinus.disabled = false 
+    }
     quantityCount --
+    
     document.getElementById(id).value = quantityCount
     let price = document.getElementById(id +'price').dataset.price
     console.log(price)
     let totalQuantity = price * quantityCount
 
+    
 document.getElementById(id + 'price').innerText = totalQuantity
+
+
 calculateTotal()
 }
 
-
-// document.querySelector('.btn-plus').addEventListener('click', function (){
-//     quantityCount = document.querySelectorAll('.quantity').value
-//     quantityCount ++
-//     document.querySelectorAll('.quantity').value = quantityCount
-
-//        if (quantityCount > 1) {
-//     document.querySelector('.btn-minus').removeAttribute('disabled')
-//     document.querySelector('.btn-minus').classList.remove('disabled')
-// }
-
-//     quantityPrice()
-// })
-
-
-
-// document.querySelector('.btn-minus').addEventListener('click', function (){
-//     quantityCount = document.querySelectorAll('.quantity').value
-//     quantityCount --
-//     document.querySelectorAll('.quantity').value = quantityCount
-
-//     if (quantityCount === 1) {
-//     document.querySelector('.btn-minus').setAttribute('disabled', 'disabled')
-// }
-    // quantityPrice()
-
-
-// Trying add to cart icon
-// cartIndex.innerText = 
-
-function Remove(id){
-    console.log(id)
-
-    // let products = [];
-    //     products = JSON.parse(localStorage.getItem('products'));
-    // products.indexOf()
-    // products.slice()
+// Remove button
+function Remove(id){    
    let index 
-     produtsArray.forEach((element ,item) => {
+    produtsArray.forEach((element ,item) => {
 
     if  (element._id == id ){
-index = item
-return
+        index = item
+        return
     } 
        
    });
-      console.log('old array', produtsArray)
-
+    
    produtsArray.splice(index,1)
-    localStorage.setItem('products', JSON.stringify(produtsArray));
-    displayCart()
-   console.log('new array', produtsArray)
-  // the last line  
-updateCartNumber()
-calculateTotal()
+   localStorage.setItem('products', JSON.stringify(produtsArray));
+    displayCart() 
+    updateCartNumber()
+    calculateTotal()
 }
 
 // Form validations
@@ -222,10 +182,12 @@ form.addEventListener('submit', function(e) {
     } else {
         showSuccess(city)
     }
-    if (firstName.value === '' || lastName.value === '' || email.value === '' || city.value === '' || address.value === ''){
+    if (firstName.value === '' || lastName.value === '' || email.value === '' || !isValidEmail(email.value) || city.value === '' || address.value === ''){
 
         return
-    }else{
+    } else {
+
+    // Mapping each element to new array
     let pd = produtsArray.map(item => item._id )
     let data = {
         contact : {
@@ -237,11 +199,22 @@ form.addEventListener('submit', function(e) {
         }, 
         products: pd
     }
-             // send the opject using fetch method and post to the order and get the data then store it insode local storage and redirect to the confirmation page 
-             // inside confirmation page get the data from local storage then show the Order Id .
-             
-             // search for using fetch with Post  .
-    console.log(data)
+            // Sending object (using fetch) 
+            fetch('http://localhost:3000/api/cameras/order', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+                body: JSON.stringify(data)
+            }).then(function (response) {
+                return response.json()
+            }).then(function(datas) {
+                localStorage.setItem('order', JSON.stringify(datas))
+                window.location.href = "order-confirmation.html"
+            }).catch(function (error) {
+                console.log(error)
+            })             
 }
 }) 
 

@@ -14,32 +14,23 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg bg-info justify-content-between pt-4">
-      <a class="navbar-brand text-warning pl-5 h1" href="#">Orinoco</a>
-      <button class="navbar-toggler text-lg" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
+    <nav class="navbar navbar-expand-lg bg-info justify-content-sm-between pt-4">
+      <a class="navbar-brand text-warning pl-5 h1" href="./index.html">Orinoco</a>
 
       <a class="navbar-brand text-warning pr-5 h1" href="#">Cart <svg xmlns="http://www.w3.org/2000/svg" width="32"
           height="32" fill="currentColor" class="bi bi-cart4 pl-1" viewBox="0 0 16 16">
           <path
             d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
         </svg>
-        <div class="cart-index" id="cart-index">2</div>
+        <div class="cart-index" id="cart-index"></div>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
     </nav>
     <h2 class="py-5 text-center font-weight-bolder h1 mt-2 text-info">ORINOCO</h2>
   </header>
   <main class="container">
     <h2 class="text-info mt-2">Your cart</h2>
-    <table class="table table-hover mb-5">
+    <table class="table table-hover mb-5 table-sm">
       <thead>
         <tr>
           <th class="text-left prod-st" scope="col">Product</th>
@@ -50,48 +41,13 @@
         </tr>
       </thead>
       <tbody id="my-cart">
-        <tr>
-          <th class="text-center" scope="row"><img src="../JWDP5/images/vcam_1.jpg" width="40px" height="40px"
-              class="mr-4 cart-pic" alt="A camera" id="cartItem">Camera 1</th>
-          <td class="text-center">Lense 1</td>
-          <td class="input-group justify-content-center">
-            <button class="input-group-prepend btn btn-minus disabled btn-danger">-</button>
-            <input class="input-group-text input-st" id="quantity" type="text" value="1">
-            <button class="btn btn-plus btn-success">+</button>
-          </td>
-          <td class="text-center price" id="price">1000000</td>
-          <td class="text-center"><button type="button" class="btn btn-danger">Remove</button></td>
-        </tr>
-        <tr>
-          <th class="text-center" scope="row"><img src="../JWDP5/images/vcam_2.jpg" width="40px" height="40px"
-              class="mr-4 cart-pic" alt="A camera">Camera 2</th>
-          <td class="text-center">Lense 2</td>
-          <td class="input-group justify-content-center">
-            <button class="input-group-prepend btn btn-minus disabled btn-danger">-</button>
-            <input class="input-group-text input-st quantity" type="text" value="1">
-            <button class="btn btn-plus btn-success">+</button>
-          </td>
-          <td class="text-center price">200000</td>
-          <td class="text-center"><button type="button" class="btn btn-danger">Remove</button></td>
-        </tr>
-        <tr>
-          <th class="text-center" scope="row"><img src="../JWDP5/images/vcam_3.jpg" width="40px" height="40px"
-              class="mr-4 cart-pic" alt="">Camera 3</th>
-          <td class="text-center">Lense 3</td>
-          <td class="input-group justify-content-center">
-            <button class="input-group-prepend btn btn-minus disabled btn-danger">-</button>
-            <input class="input-group-text input-st quantity" type="text" value="1">
-            <button class="btn btn-plus btn-success">+</button>
-          </td>
-          <td class="text-center price">300000</td>
-          <td class="text-center"><button type="button" class="btn btn-danger">Remove</button></td>
-        </tr>
+
       </tbody>
     </table>
     <hr>
     <div class="text-right mr-5">
       <h3 class="total">Total price:</h3>
-      <i class="fas fa-dollar-sign fa-lg pl-4"><span class="h3 font-weight-bold mr-3" id="total-price">10000</span></i>
+      <i class="fas fa-dollar-sign fa-lg pl-4"><span class="h3 font-weight-bold mr-3" id="total-price">0</span></i>
     </div>
     <hr>
   </main>
