@@ -54,7 +54,7 @@ let price = document.querySelectorAll('.price').innerText
 function calculateTotal(){
 
     let total = 0 
-    const allPrice = [...document.getElementsByClassName('price')] // Rest parameters
+    const allPrice = [...document.getElementsByClassName('price')] // Spread operator - Taking them as seperate numbers
     allPrice.forEach(item=>{
         total += Number.parseInt(item.innerText)                   // Parsing string to integer
     })

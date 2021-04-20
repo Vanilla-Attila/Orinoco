@@ -65,12 +65,12 @@ document.addEventListener('load',getProduct()) // on load calling the function
    
 // Adding product to local storage
 function addProduct(product){
-    let products = [];
+    let products = [];                                                  // Creating an empty array
     if(localStorage.getItem('products')){
-        products = JSON.parse(localStorage.getItem('products'));
+        products = JSON.parse(localStorage.getItem('products'));        // Converting string to object
     }
     console.log(products)
     products.push(product);
-     localStorage.setItem('products', JSON.stringify(products));
+     localStorage.setItem('products', JSON.stringify(products));        // Converting object to srting
      window.location.href = "cart-page.html"
 }

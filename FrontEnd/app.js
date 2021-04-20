@@ -1,7 +1,7 @@
-// Updating cart number
+// Updating cart number   IIFE Immediately Ivoked Function Expression
 (function updateCartNumber(){
     let products =  localStorage.getItem('products')
-    let produtsArray = JSON.parse(products)
+    let produtsArray = JSON.parse(products)                                 // Converting json string to JS object
     let cartIndex = document.getElementById('cart-index')
     cartIndex.innerText = produtsArray != null ? produtsArray.length : 0    // Ternary operator (if else in single line)
 })()
